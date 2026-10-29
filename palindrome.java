@@ -8,6 +8,23 @@ public class palindrome {
         System.out.println(isPalindrome(x));
     }
     public static boolean isPalindrome(String str) {
+        str.toLowerCase();
+        
+        String nonLetters = ",.:;()[]{}!@#$%^&* ";
+        if (str.contains(nonLetters)) {
+			boolean nonl = false;
+			}
+		if (str.charAt(x) == nonLetters.charAt(j)) {
+			nonl = true;
+			}
+		
+		
+		if (nonl == false) {
+			str += str.charAt(i);
+			return str;
+			}
+
+        
         for (int i = 0; i < str.length() / 2; i++) {
             for (int n = str.length(); n > 0; n += -1) {
                 if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
