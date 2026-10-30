@@ -9,25 +9,21 @@ public class palindrome {
     }
     public static boolean isPalindrome(String str) {
         str.toLowerCase();
-        
-        String nonLetters = ",.:;()[]{}!@#$%^&* ";
-        if (str.contains(nonLetters)) {
-			boolean nonl = false;
-			}
-		if (str.charAt(x) == nonLetters.charAt(j)) {
-			nonl = true;
-			}
-		
-		
-		if (nonl == false) {
-			str += str.charAt(i);
-			return str;
-			}
+        String newStr = "";
 
+        String nonLetters = ",.:;()[]{}!@#$%^&* ";
+        for (int j = 0; j < str.length(); j++) {
+            String letter = str.substring(j,j+1);
+            if (!nonLetters.contains(letter)) {
+                newStr += str.charAt(j);
+            }
+        }
         
-        for (int i = 0; i < str.length() / 2; i++) {
-            for (int n = str.length(); n > 0; n += -1) {
-                if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+        System.out.println(newStr);
+        
+        for (int i = 0; i < newStr.length() / 2; i++) {
+            for (int n = newStr.length(); n > 0; n += -1) {
+                if (newStr.charAt(i) != newStr.charAt(newStr.length() - 1 - i)) {
                     return false;
                 }
             }
